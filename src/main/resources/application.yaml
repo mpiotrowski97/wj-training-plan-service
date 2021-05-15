@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: wj-training-plan-service
+  zipkin:
+    base-url: http://localhost:9411/
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8888/auth/realms/workout-journal
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    initialization-mode: embedded
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+server:
+  port: 8081
+
